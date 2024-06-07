@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //1
+                    function findNumbersDivisibleBy(arr, divisor) 
+            {
+                return arr.filter(num => num % divisor === 0);
+            }
+
+            const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            const divisor = 2;
+
+            const numbersDivisibleByDivisor = findNumbersDivisibleBy(numbers, divisor);
+            console.log('Задание 1 = ' + numbersDivisibleByDivisor); // Выведет [2, 4, 6, 8, 10]
+
+            
+            //2
+                        function isAnagram(str1, str2) {
+                const cleanString = (str) => str.replace(/[^\w]/g, '').toLowerCase();
+                
+                const cleanStr1 = cleanString(str1);
+                const cleanStr2 = cleanString(str2);
+
+                if (cleanStr1.length !== cleanStr2.length) {
+                    return false;
+                }
+
+                const sortedStr1 = cleanStr1.split('').sort().join('');
+                const sortedStr2 = cleanStr2.split('').sort().join('');
+
+                return sortedStr1 === sortedStr2;
+            }
+
+            const string1 = "клоун";
+            const string2 = "уклон";
+
+            if (isAnagram(string1, string2)) {
+                console.log('Задание 2 = ' + "Строки являются анаграммами.");
+            } else {
+                console.log('Задание 2 = ' + "Строки не являются анаграммами.");
+            }
+
+            //3
+
+                        function countVowels(str) {
+                const vowels = ['a', 'e', 'i', 'o', 'u'];
+                let count = 0;
+
+                str = str.toLowerCase();
+
+                for (let char of str) {
+                    if (vowels.includes(char)) {
+                        count++;
+                    }
+                }
+
+                return count;
+            }
+
+            const inputString = "Hello, World!";
+            const vowelsCount = countVowels(inputString);
+
+            console.log('Задание 3 = ' + `Количество гласных в строке "${inputString}" равно ${vowelsCount}.`);
+
+            //4
+                            const height = 7; // задаем высоту треугольника
+
+                for (let i = 1; i <= height; i++) {
+                    let row = '';
+                    for (let j = 1; j <= i; j++) {
+                        row += '#';
+                    }
+                    console.log(row);
+                }
+
+            //5
+                        for (let i = 1; i <= 100; i++) {
+                if (i % 3 === 0 && i % 5 === 0) {
+                    console.log('FizzBuzz');
+                } else if (i % 3 === 0) {
+                    console.log('Fizz');
+                } else if (i % 5 === 0) {
+                    console.log('Buzz');
+                } else {
+                    console.log(i);
+                }
+
+            }
+    </script>
+</body>
+</html>

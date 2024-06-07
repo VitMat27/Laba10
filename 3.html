@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 8 испр
+function isEven1(n1) {
+    if (n1 < 0) {
+        return isEven1(-n1);
+    } else if (n1 === 0) {
+        return true;
+    } else if (n1 === 1) {
+        return false;
+    } else {
+        return isEven1(n1 - 2);
+    }
+}
+
+// Тестирование функции
+console.log('Задание 8 = ' + isEven1(-1)); // Теперь выведет true, так как -1 теперь будет преобразовано в положительное число
+    </script>
+</body>
+</html>
