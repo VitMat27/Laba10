@@ -20,16 +20,16 @@
 <p><b>CSS</b> — формальный язык описания внешнего вида документа, написанного с использованием языка разметки. Также может применяться к любым XML-документам, например, к SVG или XUL.</p>
 
 
-<h1 style="text-align: center">Задачи CSS</h1>
+<h1 style="text-align: center">Задачи JS</h1>
 <ol>
-    <li>Выполнить задания по PHP и JS</li>
+    <li>Выполнить задания по JS</li>
 </ol>
 
 
 
 <h1 style="text-align: center">Решения HTML</h1>
 
-<h2 style="text-align: center">Задания 1-18</h2>
+<h2 style="text-align: center">Задания 1-5</h2>
 
 ```html
 <!DOCTYPE html>
@@ -41,125 +41,97 @@
 </head>
 <body>
     <script>
-        // 1. 
-        var str = 'hdfgv';
-        console.log('Задание 1 = ' + str[0]); // 'h'
-        console.log('Задание 1 = ' + str[1]); // 'd'
-        console.log('Задание 1 = ' + str[4]); // 'v'
-    </script>
 
+        //1
+                    function findNumbersDivisibleBy(arr, divisor) 
+            {
+                return arr.filter(num => num % divisor === 0);
+            }
 
-    <script>
-        // 2. 
-        var secondsInHour = 60 * 60;
-        console.log('Задание 2 = ' + secondsInHour);
-    </script>
+            const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            const divisor = 2;
 
+            const numbersDivisibleByDivisor = findNumbersDivisibleBy(numbers, divisor);
+            console.log('Задание 1 = ' + numbersDivisibleByDivisor); // Выведет [2, 4, 6, 8, 10]
 
-        <script>
-                // 3.
-            var num = 1;
-            num += 12;
-            num -= 14;
-            num *= 5;
-            num /= 7;
-            num++;
-            num--;
-            console.log('Задание 3 = ' + num);
-
-            // 4.
-            var num = 3;
-            alert('Задание 4 = ' + num);
-
-            // 5.
-            var a = 10;
-            var b = 2;
-            console.log('Задание 5 = ' + 'Сумма:', a + b);
-            console.log('Задание 5 = ' + 'Разность:', a - b);
-            console.log('Задание 5 = ' + 'Произведение:', a * b);
-            console.log('Задание 5 = ' + 'Частное:', a / b);
-
-            // 6.
-            var c = 15;
-            var d = 2;
-            var result = c + d;
-            console.log('Задание 6 = ' + result);
-
-            // 7.
-            var a = 10;
-            var b = 2;
-            var c = 5;
-            console.log('Задание 7 = ' + 'Сумма:', a + b + c);
-             
-            // 8.
-            var a = 17;
-            var b = 10;
-            var c = a - b;
-            var d = 7;
-            var result = c + d;
-            console.log('Задание 8 = ' +  result);
-
-            // 9.
-            var secondsInHour = 60 * 60;
-            var secondsInDay = secondsInHour * 24;
-            var secondsInMonth = secondsInDay * 30; // упрощенно, без учета разной длины месяцев
-            console.log('Задание 9 = ' + 'Секунд в часе:', secondsInHour);
-            console.log('Задание 9 = ' + 'Секунд в сутках:', secondsInDay);
-            console.log('Задание 9 = ' + 'Секунд в месяце:', secondsInMonth);
-
-            // 10.
-            var hour = new Date().getHours();
-            var minute = new Date().getMinutes();
-            var second = new Date().getSeconds();
-            console.log('Задание 10 = ' + hour + ':' + minute + ':' + second);
-
-            // 11.
-            var number = 5;
-            var square = Math.pow(number, 2);
-            console.log('Задание 11 = ' + square);
-
-            // 12.
-            let arr = [1, 2, 3, 4, 5, 6];
-            let sum = arr.reduce((acc, curr) => curr % 2 === 0 ? acc + Math.sqrt(curr) : acc, 0);
-            console.log('Задание 12 = ' + sum);
-
-            // 13.
-            let applePrice = 1.15;
-            let orangePrice = 2.30;
-            let totalPrice = applePrice + orangePrice;
-            console.log('Задание 13 = ' + totalPrice);
-
-            // 14.
-            let x = 5;
-            alert('Задание 14 = ' + x++); // Выведет 5
-
-            // 15.
-            console.log('Задание 15 = ' + [ ] + false - null + true); // Выведет NaN
-
-            // 16.
-            let y = 1;
-            let x1 = y = 2;
-            console.log('Задание 16 = ' +  x1); // Выведет 2
-
-            // 17.
-            console.log('Задание 17 = ' + [ ] + 1 + 2); // Выведет "12"
-
-            // 18.
-            let a6 = 5 % 3; // 2
-            let a7 = 3 % 5; // 3
-            let a8 = 5 + '3'; // "53"
-            let a9 = '5' - 3; // 2
-            let a10 = 75 + 'кг'; // "75кг"
-
-            console.log('Задание 18 = ' + a6 + ' ' + a7 + ' ' +  a8 + ' ' + a9 + ' ' + a10 );
             
-        </script>
+            //2
+                        function isAnagram(str1, str2) {
+                const cleanString = (str) => str.replace(/[^\w]/g, '').toLowerCase();
+                
+                const cleanStr1 = cleanString(str1);
+                const cleanStr2 = cleanString(str2);
 
-        
+                if (cleanStr1.length !== cleanStr2.length) {
+                    return false;
+                }
+
+                const sortedStr1 = cleanStr1.split('').sort().join('');
+                const sortedStr2 = cleanStr2.split('').sort().join('');
+
+                return sortedStr1 === sortedStr2;
+            }
+
+            const string1 = "клоун";
+            const string2 = "уклон";
+
+            if (isAnagram(string1, string2)) {
+                console.log('Задание 2 = ' + "Строки являются анаграммами.");
+            } else {
+                console.log('Задание 2 = ' + "Строки не являются анаграммами.");
+            }
+
+            //3
+
+                        function countVowels(str) {
+                const vowels = ['a', 'e', 'i', 'o', 'u'];
+                let count = 0;
+
+                str = str.toLowerCase();
+
+                for (let char of str) {
+                    if (vowels.includes(char)) {
+                        count++;
+                    }
+                }
+
+                return count;
+            }
+
+            const inputString = "Hello, World!";
+            const vowelsCount = countVowels(inputString);
+
+            console.log('Задание 3 = ' + `Количество гласных в строке "${inputString}" равно ${vowelsCount}.`);
+
+            //4
+                            const height = 7; // задаем высоту треугольника
+
+                for (let i = 1; i <= height; i++) {
+                    let row = '';
+                    for (let j = 1; j <= i; j++) {
+                        row += '#';
+                    }
+                    console.log(row);
+                }
+
+            //5
+                        for (let i = 1; i <= 100; i++) {
+                if (i % 3 === 0 && i % 5 === 0) {
+                    console.log('FizzBuzz');
+                } else if (i % 3 === 0) {
+                    console.log('Fizz');
+                } else if (i % 5 === 0) {
+                    console.log('Buzz');
+                } else {
+                    console.log(i);
+                }
+
+            }
+    </script>
 </body>
 </html>
 ```
-<h2 style="text-align: center">Задания 19-23</h2>
+<h2 style="text-align: center">Задания 6-13</h2>
 
 ```html
 <!DOCTYPE html>
@@ -171,45 +143,185 @@
 </head>
 <body>
     <script>
-        // 19.
-    let height = 23;
-    let width = 10;
-    let s = height * width;
-    console.log('Задание 19 = ' + s);
 
-    // 20.
-    let heightC = 10;
-    let dC = 4;
-    let radius = dC / 2;
-    let v = Math.PI * radius * radius * heightC;
-    console.log('Задание 20 = ' + v);
+        //6
+        const size = 8; // размер доски
+let board = '';
 
-    // 21.
-    let S = 2000000;
-    let p = 0.1;
-    let years = 5;
-    let perepl = S * p * years;
-    console.log('Задание 21 = ' + perepl);
+for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+        if ((i + j) % 2 === 0) {
+            board += ' '; // добавляем пробел, если сумма координат четная
+        } else {
+            board += '#'; // добавляем решетку, если сумма координат нечетная
+        }
+    }
+    board += '\n'; // добавляем символ новой строки после каждой строки
+}
 
-    // 22.
-    let str = 'Привет';
-    let num1 = 123;
-    let flag = true;
-    let txt = 'true';
-    console.log('Задание 22 = ' + typeof str);
-    console.log('Задание 22 = ' + typeof num1);
-    console.log('Задание 22 = ' + typeof flag);
-    console.log('Задание 22 = ' + typeof txt);
+console.log(board);
 
-    // 23.
-    function oppositeNumber(num) {
-        return -num;
+
+//7
+function min(a, b) {
+    return a < b ? a : b;
+}
+
+// Пример использования функции
+console.log('Задание 7 = ' + min(5, 3));
+
+
+//8
+
+function isEven(n) {
+    if (n === 0) {
+        return true;
+    } else if (n === 1) {
+        return false;
+    } else if (n < 0) {
+        return isEven(-n);
+    } else {
+        return isEven(n - 2);
+    }
+}
+
+// Тестирование функции
+console.log('Задание 8 = ' + isEven(50)); // Выведет true, так как 50 - чётное число
+console.log('Задание 8 = ' + isEven(75)); // Выведет false, так как 75 - нечётное число
+console.log('Задание 8 = ' + isEven(-1)); // Выведет false, так как мы используем рекурсию с положительными числами
+
+//9
+
+function countBs(str) {
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str.charAt(i) === 'B') {
+            count++;
+        }
+    }
+    return count;
+}
+
+function countChar(str, char) {
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str.charAt(i) === char) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// Пример использования
+let sampleString = "Bob has a blue ball.";
+console.log('Задание 9 = ' + countBs(sampleString)); // Выведет количество символов 'B' в строке
+console.log('Задание 9 = ' + countChar(sampleString, 'a')); // Выведет количество символов 'a' в строке
+
+
+
+//10
+function range(start, end, step = 1) {
+    let arr = [];
+    if (step > 0) {
+        for (let i = start; i <= end; i += step) {
+            arr.push(i);
+        }
+    } else {
+        for (let i = start; i >= end; i += step) {
+            arr.push(i);
+        }
+    }
+    return arr;
+}
+
+function sum(arr) {
+    let total = 0;
+    for (let num of arr) {
+        total += num;
+    }
+    return total;
+}
+
+let numbers = range(1, 10);
+console.log(sum(numbers)); // Выведет сумму чисел от 1 до 10, то есть 55
+
+let numbers2 = range(1, 10, 2);
+console.log(numbers2); // Выведет [1, 3, 5, 7, 9]
+
+let numbers3 = range(5, 2, -1);
+console.log(numbers3); // Выведет [5, 4, 3, 2]
+
+//11
+function reverseArray(arr) {
+    let reversedArr = [];
+    for (let i = arr.length - 1; i >= 0; i--) {
+        reversedArr.push(arr[i]);
+    }
+    return reversedArr;
+}
+
+function reverseArrayInPlace(arr) {
+    for (let i = 0; i < Math.floor(arr.length / 2); i++) {
+        let temp = arr[i];
+        arr[i] = arr[arr.length - 1 - i];
+        arr[arr.length - 1 - i] = temp;
+    }
+    return arr;
+}
+
+let originalArray = [1, 2, 3, 4, 5];
+let reversedArray = reverseArray(originalArray);
+console.log(reversedArray); // Выведет [5, 4, 3, 2, 1]
+
+let arrayToReverse = [1, 2, 3, 4, 5];
+reverseArrayInPlace(arrayToReverse);
+console.log(arrayToReverse); // Выведет [5, 4, 3, 2, 1]
+
+
+//12
+function deepEqual(value1, value2) {
+    if (value1 === value2) {
+        return true;
     }
 
-    let number1 = 5;
-    let opposite = oppositeNumber(number1);
-    console.log('Задание 23 = ' + opposite);
-</script>
+    if (value1 == null || typeof value1 != "object" || value2 == null || typeof value2 != "object") {
+        return false;
+    }
+
+    let keys1 = Object.keys(value1);
+    let keys2 = Object.keys(value2);
+
+    if (keys1.length !== keys2.length) {
+        return false;
+    }
+
+    for (let key of keys1) {
+        if (!keys2.includes(key) || !deepEqual(value1[key], value2[key])) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+// Примеры использования функции deepEqual
+let obj1 = {a: 1, b: {c: 2}};
+let obj2 = {a: 1, b: {c: 2}};
+console.log(deepEqual(obj1, obj2)); // Выведет true
+
+let obj3 = {a: 1, b: {c: 3}};
+console.log(deepEqual(obj1, obj3)); // Выведет false
+
+//13
+let arrayOfArrays = [[1, 2], [3, 4], [5, 6]];
+
+let flattenedArray = arrayOfArrays.reduce((accumulator, currentArray) => {
+    return accumulator.concat(currentArray);
+}, []);
+
+console.log(flattenedArray);
+    </script>
+
 </body>
 </html>
 ```
